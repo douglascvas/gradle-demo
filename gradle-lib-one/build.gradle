@@ -1,0 +1,27 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+apply plugin: 'java-library'
+apply plugin: 'maven'
+
+group = 'com.tyro'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    api group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+    api group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+    implementation group: 'org.hibernate', name: 'hibernate-validator', version: '6.0.10.Final'
+    implementation group: 'org.glassfish', name: 'javax.el', version: '3.0.0'
+
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+
+}
