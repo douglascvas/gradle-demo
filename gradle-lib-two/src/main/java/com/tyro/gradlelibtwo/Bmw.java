@@ -1,6 +1,6 @@
 package com.tyro.gradlelibtwo;
 
-//import org.hibernate.validator.constraints.Range;
+import org.hibernate.validator.constraints.Range;
 
 import com.tyro.gradlelibone.Car;
 
@@ -11,7 +11,7 @@ public class Bmw extends Car {
     @Size(min = 5, max = 10)
     private String model;
 
-//        @Range(min = 2000, max = 2018)
+    @Range(min = 2000, max = 2018)
     private int year;
 
     public Bmw(String model, int year, String manufacturer, String licencePlate, int seatCount) {

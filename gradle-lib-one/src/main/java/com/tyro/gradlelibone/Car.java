@@ -1,6 +1,7 @@
 package com.tyro.gradlelibone;
 
-import javax.validation.constraints.Min;
+import org.hibernate.validator.constraints.Range;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -13,7 +14,7 @@ public class Car {
     @Size(min = 2, max = 14)
     private String licensePlate;
 
-    @Min(2)
+    @Range(min = 1, max = 200)
     private int seatCount;
 
     public Car(String manufacturer, String licencePlate, int seatCount) {
