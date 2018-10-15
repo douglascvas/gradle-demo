@@ -5,20 +5,6 @@ group = 'com.tyro'
 version = '1.0'
 sourceCompatibility = 1.8
 
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
-
-dependencies {
-    api group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
-    api group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
-    implementation group: 'org.hibernate.validator', name: 'hibernate-validator', version: '6.0.13.Final'
-    implementation group: 'org.glassfish', name: 'javax.el', version: '3.0.0'
-
-    testImplementation group: 'junit', name: 'junit', version: '4.12'
-}
-
 publishing {
     publications {
         maven(MavenPublication) {
@@ -36,28 +22,9 @@ publishing {
     }
 }
 
-task gradlePhases {
-//    doFirst {
-//        println "first"
-//    }
-//    println "middle"
-//    doLast {
-//        println "last"
-//    }
-}
-
-task gradleDummyTask {
-    doLast {
-        println "I do [almost] nothing..."
-    }
-}
-
 task gradleIO {
-    inputs.files(fileTree("${projectDir}/src/main/resources/").files)
-    outputs.dir("$buildDir/resources/")
     doLast {
-        println "I am executed at " + System.currentTimeMillis()
-        println fileTree("${projectDir}/src/main/resources/").files
+        println "I was executed at " + System.currentTimeMillis()
     }
 }
 
